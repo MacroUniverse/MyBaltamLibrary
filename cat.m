@@ -29,7 +29,7 @@ if Ndim == 2
             A(ind:ind+n-1, :) = varargin{i};
             ind = ind + n;
         end
-elseif dim == 2
+	elseif dim == 2
         for i = 1:N
             n = size(varargin{i}, dim);
             A(:, ind:ind+n-1) = varargin{i};
@@ -79,31 +79,6 @@ elseif Ndim == 4
         for i = 1:N
             n = size(varargin{i}, dim);
             A(:, :, :, ind:ind+n-1) = varargin{i};
-            ind = ind + n;
-        end
-    end
-elseif Ndim == 5
-    if dim == 1
-        for i = 1:N
-            A(ind:ind+n-1, :, :, :, :) = varargin{i};
-            ind = ind + n;
-        end
-    elseif dim == 2
-        for i = 1:N
-            n = size(varargin{i}, dim);
-            A(:, ind:ind+n-1, :, :, :) = varargin{i};
-            ind = ind + n;
-        end
-    elseif dim == 3
-        for i = 1:N
-            n = size(varargin{i}, dim);
-            A(:, :, ind:ind+n-1, :, :) = varargin{i};
-            ind = ind + n;
-        end
-    elseif dim == 4
-        for i = 1:N
-            n = size(varargin{i}, dim);
-            A(:, :, :, ind:ind+n-1, :) = varargin{i};
             ind = ind + n;
         end
     end
