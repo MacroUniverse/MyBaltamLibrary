@@ -14,8 +14,7 @@ sz_dim(1) = sz(dim);
 for i = 2:N
     nd = ndims(varargin{i});
     if nd > Ndim
-        sz = [sz ones(1,nd-Ndim)];
-        Ndim = nd;
+        error(['第 ' num2str(i) ' 个矩阵维数过大：' num2str(nd) ' > ' num2str(Ndim)]);
     end
     sz_dim(i) = size(varargin{i}, dim);
     for j = 1:Ndim
